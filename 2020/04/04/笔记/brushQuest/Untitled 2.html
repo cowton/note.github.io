@@ -1,0 +1,74 @@
+<h1 id="数组中重复的数字"><a href="#数组中重复的数字" class="headerlink" title="数组中重复的数字"></a>数组中重复的数字</h1><p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。<em>也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，</em>那么对应的输出是第一个重复的数字2。</p>
+<ol>
+<li><p>逻辑法</p>
+<p> public class Solution {</p>
+<pre><code>public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 2};
+    int len = nums.length;
+    int[] dup = nums;
+
+    System.out.println(new Solution().duplicate(nums, len, dup));
+}
+
+// Parameters:
+//    numbers:     an array of integers
+//    length:      the length of array numbers
+//    duplication: (Output) the duplicated number in the array number,length of duplication array is 1,
+//    so using duplication[0] = ? in implementation;
+//                  Here duplication like pointor in C/C++, duplication[0] equal *duplication in C/C++
+//    这里要特别注意~返回任意重复的一个，赋值duplication[0]
+// Return value:       true if the input is valid, and there are some duplications in the array number
+//                     otherwise false
+public boolean duplicate(int numbers[], int length, int[] duplication) {
+    boolean[] k = new boolean[length];
+    for (int i = 0; i &lt; k.length; i++) {
+        if (k[numbers[i]] == true) {
+            duplication[0] = numbers[i];
+            return true;
+        }
+        k[numbers[i]] = true;
+    }
+    return false;
+}</code></pre><p> }</p>
+</li>
+<li><p>原始数组＋length</p>
+<p> public boolean duplicate(int numbers[], int length, int[] duplication) {</p>
+<pre><code>    if (length &lt;= 0 &amp;&amp; numbers == null)
+        return false;
+
+    for (int i = 0; i &lt; length; i++) {
+        int ind = numbers[i];
+        if (ind &gt;= length)
+            ind -= length;
+        if (numbers[ind] &gt;= length) {
+            duplication[0] = ind;
+            return true;
+        }
+        numbers[ind] += length;
+    }
+    return false;
+}</code></pre></li>
+<li><p>自己循环</p>
+<p> public class Solution {</p>
+<pre><code>public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 2};
+    int len = nums.length;
+    int[] dup = nums;
+
+    System.out.println(new Solution().duplicate(nums, len, dup));
+}
+
+// Parameters:
+//    numbers:     an array of integers
+//    length:      the length of array numbers
+//    duplication: (Output) the duplicated number in the array number,length of duplication array is 1,
+//    so using duplication[0] = ? in implementation;
+//                  Here duplication like pointor in C/C++, duplication[0] equal *duplication in C/C++
+//    这里要特别注意~返回任意重复的一个，赋值duplication[0]
+// Return value:       true if the input is valid, and there are some duplications in the array number
+//                     otherwise false
+public boolean duplicate(int numbers[], int length, int[] duplication) {
+    boolean[] bol=new boolean[length];
+            for(int i=0;i&lt;length;i++){</code></pre><p> if(bol[numbers[i]]==true){<br> duplication[0]=numbers[i];<br> return true;}<br> bol[numbers[i]]=true;<br> }<br> return false;<br> }</p>
+</li>
+</ol>

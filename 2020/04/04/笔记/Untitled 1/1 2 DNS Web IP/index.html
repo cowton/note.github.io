@@ -467,16 +467,16 @@
             <div id="articleContent">
                 <h1 id="1-2-向-DNS-服务器查询-Web-服务器的-IP-地址"><a href="#1-2-向-DNS-服务器查询-Web-服务器的-IP-地址" class="headerlink" title="1.2 向 DNS 服务器查询 Web 服务器的 IP 地址"></a>1.2 向 DNS 服务器查询 Web 服务器的 IP 地址</h1><p>浏览器能够解析网址并生成 HTTP 消息，但它本身并不具备将消息发送到网络中的功能，因此这一功能需要委托操作系统来实现</p>
 <p>发送消息的功能对于所有的应用程序来说都是通用的，因此让操作系统来实现这一功能，其他应用程序委托操作系统来进行操作，这是一个比较合理的做法</p>
-<h2 id="IP的基本思路"><a href="#IP的基本思路" class="headerlink" title="IP的基本思路"></a>IP的基本思路</h2><p><img src="1%202%20DNS%20Web%20IP/Untitled.png" alt="1%202%20DNS%20Web%20IP/Untitled.png"></p>
+<h2 id="IP的基本思路"><a href="#IP的基本思路" class="headerlink" title="IP的基本思路"></a>IP的基本思路</h2><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/1%202%20DNS%20Web%20IP/Untitled.png" alt="1%202%20DNS%20Web%20IP/Untitled.png"></p>
 <p>网络号和主机号连起来总共是 32 比特，但这两部分的具体结构是不固定的</p>
-<p><img src="1%202%20DNS%20Web%20IP/Untitled%201.png" alt="1%202%20DNS%20Web%20IP/Untitled%201.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/1%202%20DNS%20Web%20IP/Untitled%201.png" alt="1%202%20DNS%20Web%20IP/Untitled%201.png"></p>
 <p>附加信息称为<strong><code>子网掩码</code>，</strong></p>
 <p>子网掩码为 1 的部分表示网络号，子网掩码为 0 的部分表示主机<br>号。</p>
 <p>子网掩码表示网络号与主机号之间的边界。在本例中，这个边界与字节的边界<br>是正好吻合的，也就是正好划分在句点的位置上，实际上也可以划分在字节的<br>中间位置。</p>
 <p>IP 地址的主机号<br>全 0：表示整个子网<br>全 1：表示向子网上所有设备发送包，即“广播”</p>
 <h2 id="Socket-库提供查询-IP-地址的功能"><a href="#Socket-库提供查询-IP-地址的功能" class="headerlink" title="Socket 库提供查询 IP 地址的功能"></a>Socket 库提供查询 IP 地址的功能</h2><p>负责执行解析（resolution）这一操作的就叫解析器（resolver），解析器实际上是一段程序，它包含在操作系统的 Socket 库中</p>
 <p>Socket 库是用于调用网络功能的程序组件集合。</p>
-<h3 id="调用解析器"><a href="#调用解析器" class="headerlink" title="调用解析器"></a>调用解析器</h3><p><img src="1%202%20DNS%20Web%20IP/Untitled%202.png" alt="1%202%20DNS%20Web%20IP/Untitled%202.png"></p>
+<h3 id="调用解析器"><a href="#调用解析器" class="headerlink" title="调用解析器"></a>调用解析器</h3><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/1%202%20DNS%20Web%20IP/Untitled%202.png" alt="1%202%20DNS%20Web%20IP/Untitled%202.png"></p>
 <p>根据域名查询 IP 地址时，浏览器会使用 Socket 库中的解析器。</p>
 <h2 id="解析器的内部原理"><a href="#解析器的内部原理" class="headerlink" title="解析器的内部原理"></a>解析器的内部原理</h2><p>网络应用程序（在我们的场景中就是指浏览器）调用解析器时，<br>程序的控制流程就会转移到解析器的内部。</p>
 <p>由于调用了其他程序，原本运行的程序进<br>入暂停状态，而被调用的程序开始运行，这就是“控制流程转移”</p>

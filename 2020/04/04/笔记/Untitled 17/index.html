@@ -467,37 +467,37 @@
             <div id="articleContent">
                 <h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><p>解决连接问题</p>
 <p>并：集合的并，查：查询</p>
-<p><img src="Untitled%2017/Untitled.png" alt="Untitled%2017/Untitled.png"></p>
-<p><img src="Untitled%2017/Untitled%201.png" alt="Untitled%2017/Untitled%201.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled.png" alt="Untitled%2017/Untitled.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%201.png" alt="Untitled%2017/Untitled%201.png"></p>
 <p>对于一组数据，主要支持两个动作</p>
 <ul>
 <li>union(p,q)</li>
 <li>isConnected(p,q)</li>
 </ul>
 <p>并查集子类连接多个父类</p>
-<p><img src="Untitled%2017/Untitled%202.png" alt="Untitled%2017/Untitled%202.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%202.png" alt="Untitled%2017/Untitled%202.png"></p>
 <pre><code>public interface UF {
     boolean isConnected(int p,int q);
     void unionElements(int p,int q);
-}</code></pre><p><img src="Untitled%2017/Untitled%203.png" alt="Untitled%2017/Untitled%203.png"></p>
+}</code></pre><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%203.png" alt="Untitled%2017/Untitled%203.png"></p>
 <p>UF2 Union效率更高</p>
-<p><img src="Untitled%2017/Untitled%204.png" alt="Untitled%2017/Untitled%204.png"></p>
-<p><img src="Untitled%2017/Untitled%205.png" alt="Untitled%2017/Untitled%205.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%204.png" alt="Untitled%2017/Untitled%204.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%205.png" alt="Untitled%2017/Untitled%205.png"></p>
 <p>UnionFind1 :5.8422322 s<br>UnionFind2 :12.7442601 s</p>
 <p>原因：JVM的底层优化，m.isConnected更慢</p>
-<h2 id="优化思路-深度小的指向深度大的根：用集合个数"><a href="#优化思路-深度小的指向深度大的根：用集合个数" class="headerlink" title="优化思路: 深度小的指向深度大的根：用集合个数"></a>优化思路: 深度小的指向深度大的根：用集合个数</h2><p><img src="Untitled%2017/Untitled%206.png" alt="Untitled%2017/Untitled%206.png"></p>
+<h2 id="优化思路-深度小的指向深度大的根：用集合个数"><a href="#优化思路-深度小的指向深度大的根：用集合个数" class="headerlink" title="优化思路: 深度小的指向深度大的根：用集合个数"></a>优化思路: 深度小的指向深度大的根：用集合个数</h2><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%206.png" alt="Untitled%2017/Untitled%206.png"></p>
 <p>O(h)：h较小</p>
 <h2 id="优化思路2：合并方式：记录深度"><a href="#优化思路2：合并方式：记录深度" class="headerlink" title="优化思路2：合并方式：记录深度"></a>优化思路2：合并方式：记录深度</h2><p>基于rank的优化</p>
 <p>数据量较大时：</p>
-<p><img src="Untitled%2017/Untitled%207.png" alt="Untitled%2017/Untitled%207.png"></p>
-<p><img src="Untitled%2017/Untitled%208.png" alt="Untitled%2017/Untitled%208.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%207.png" alt="Untitled%2017/Untitled%207.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%208.png" alt="Untitled%2017/Untitled%208.png"></p>
 <h2 id="优化思路3：路径压缩：把树压缩的较矮"><a href="#优化思路3：路径压缩：把树压缩的较矮" class="headerlink" title="优化思路3：路径压缩：把树压缩的较矮"></a>优化思路3：路径压缩：把树压缩的较矮</h2><p>使用rank：</p>
 <p>O(log*n)→iterated logarith</p>
-<p><img src="Untitled%2017/Untitled%209.png" alt="Untitled%2017/Untitled%209.png"></p>
-<p><img src="Untitled%2017/Untitled%2010.png" alt="Untitled%2017/Untitled%2010.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%209.png" alt="Untitled%2017/Untitled%209.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%2010.png" alt="Untitled%2017/Untitled%2010.png"></p>
 <p>将树的压缩放在find函数中</p>
-<p><img src="Untitled%2017/Untitled%2011.png" alt="Untitled%2017/Untitled%2011.png"></p>
-<p><img src="Untitled%2017/Untitled%2012.png" alt="Untitled%2017/Untitled%2012.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%2011.png" alt="Untitled%2017/Untitled%2011.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2017/Untitled%2012.png" alt="Untitled%2017/Untitled%2012.png"></p>
 <p>使用递归压缩之后反而可能性能不如使用循环中的<code>rank</code></p>
 
             </div>

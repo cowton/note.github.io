@@ -1,0 +1,19 @@
+<h1 id="Remove的iterator-写法"><a href="#Remove的iterator-写法" class="headerlink" title="Remove的iterator() 写法"></a>Remove的iterator() 写法</h1><p>1.首先增强for循环和iterator遍历的效果是一样的，也就说<br>增强for循环的内部也就是调用iteratoer实现的，但是增强for循环 有些缺点，例如<strong>不能在增强循环里动态的删除集合内容。不能获取下标</strong>等。<br>2.ArrayList由于使用数组实现，因此下标明确，最好使用普通循环。<br>3.而对于 LinkedList 由于获取一个元素，要从头开始向后找，因此建议使用 增强for循环，也就是iterator。</p>
+<pre><code>①     public static void removeEvensVer2(List&lt;Integer&gt; lst) 
+    { 
+        for (Integer x : lst) 
+            if (x % 2 == 0) 
+                lst.remove(x); 
+
+        System.out.println(lst); 
+    } 
+
+②     public static void removeEvensVer3(List&lt;Integer&gt; lst) 
+    { 
+        Iterator&lt;Integer&gt; itr = lst.iterator(); 
+        while (itr.hasNext()) 
+            if (itr.next() % 2 == 0) 
+                itr.remove(); 
+
+        System.out.println(lst); 
+    }</code></pre><p>原因分析：因为增强的for循环内部就是调用iterator实现的，在遍历的时候就将list转化为了迭代器，当迭代器被创建之后，如果从结构上对列表修改除非通过迭代器自身的remove、add方法，其他任何时间任何方式的修改，迭代器都会抛出ConcurrentModificationException异常。</p>

@@ -1,0 +1,16 @@
+<h1 id="红黑树的性能"><a href="#红黑树的性能" class="headerlink" title="红黑树的性能"></a>红黑树的性能</h1><ul>
+<li>对于小数据集，反而比较简单的算法可效率更高</li>
+<li>查询操作中红黑树可能不占优势，增删体现出其优势，RB》AVL》BST</li>
+<li>对于完全随机的数据，普通的BST很好用；缺点：极端情况退化成链表</li>
+<li>对于查询较多的使用情况，AVL树很好用</li>
+<li>红黑树本质上是维持了黑平衡</li>
+<li>红黑树牺牲了平衡性（2logn的高度）——统计性能更优（）增删改查的所有操作</li>
+<li>红黑树中删除节点比添加节点更复杂</li>
+</ul>
+<p><img src="Untitled%202/Untitled.png" alt="Untitled%202/Untitled.png"></p>
+<hr>
+<p>前面实现的是<code>左倾红黑树</code>，还有<code>右倾红黑树</code></p>
+<p><img src="Untitled%202/Untitled%201.png" alt="Untitled%202/Untitled%201.png"></p>
+<p>伸展树比红黑树更简单</p>
+<p><img src="Untitled%202/Untitled%202.png" alt="Untitled%202/Untitled%202.png"></p>
+<p><img src="Untitled%202/Untitled%203.png" alt="Untitled%202/Untitled%203.png"></p>

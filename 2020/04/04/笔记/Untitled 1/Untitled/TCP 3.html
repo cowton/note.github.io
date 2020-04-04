@@ -1,0 +1,28 @@
+<h1 id="TCP协议的拥塞控制"><a href="#TCP协议的拥塞控制" class="headerlink" title="TCP协议的拥塞控制"></a>TCP协议的拥塞控制</h1><h1 id="拥塞的原因"><a href="#拥塞的原因" class="headerlink" title="拥塞的原因"></a>拥塞的原因</h1><ul>
+<li>一条数据链路经过非常多的 设备</li>
+<li>数据链路中各个部分都有可能成为网络传输的瓶颈</li>
+</ul>
+<p><img src="TCP%203/Untitled.png" alt="TCP%203/Untitled.png"></p>
+<h2 id="拥塞和TCP流量控制的对比"><a href="#拥塞和TCP流量控制的对比" class="headerlink" title="拥塞和TCP流量控制的对比"></a>拥塞和TCP流量控制的对比</h2><ul>
+<li>流量控制考虑点对点的通信量的控制</li>
+<li>拥塞控制考虑整个网络，是全局性的考虑</li>
+</ul>
+<h1 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h1><p><code>**报文超时则认为是拥塞</code>，只是作为判断网络拥塞的一个方法**</p>
+<h1 id="慢启动算法"><a href="#慢启动算法" class="headerlink" title="慢启动算法"></a>慢启动算法</h1><ul>
+<li>由小到大逐渐增加发送数据量</li>
+<li>没收到一个报文确认，加一</li>
+</ul>
+<p>1 2 4 8 16 …… </p>
+<p>报文发送是<strong><code>指数增长</code></strong></p>
+<ul>
+<li>慢启动算法增长到<code>**慢启动阈值（ssthresh）</code>** 后停止增长</li>
+</ul>
+<h1 id="拥塞避免算法"><a href="#拥塞避免算法" class="headerlink" title="拥塞避免算法"></a>拥塞避免算法</h1><ul>
+<li>维护一个拥塞窗口的变量</li>
+<li>主要网络不拥塞，就试探着拥塞窗口调大</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>假如慢启动算法到达了慢启动阈值，启动拥塞避免算法，之后增大一个</p>
+<p><strong>可以保证在网络不发生拥塞的前提下发送更多的数据</strong></p>
+<p><img src="TCP%203/Untitled%201.png" alt="TCP%203/Untitled%201.png"></p>
+<p>慢启动算法和拥塞避免算法的图解</p>
+<p><img src="TCP%203/Untitled%202.png" alt="TCP%203/Untitled%202.png"></p>

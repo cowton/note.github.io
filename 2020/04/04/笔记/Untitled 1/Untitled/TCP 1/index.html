@@ -469,15 +469,15 @@
 <li>TCP的可靠传输基于连续ARQ协议</li>
 <li>TCP的滑动窗口以字节为单位</li>
 </ul>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h3 id="部分字节未发送确认"><a href="#部分字节未发送确认" class="headerlink" title="部分字节未发送确认"></a>部分字节未发送确认</h3><p><img src="TCP%201/Untitled.png" alt="TCP%201/Untitled.png"></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h3 id="部分字节未发送确认"><a href="#部分字节未发送确认" class="headerlink" title="部分字节未发送确认"></a>部分字节未发送确认</h3><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled.png" alt="TCP%201/Untitled.png"></p>
 <p>经过一段时间之后，部分字节已经确认</p>
-<p><img src="TCP%201/Untitled%201.png" alt="TCP%201/Untitled%201.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%201.png" alt="TCP%201/Untitled%201.png"></p>
 <p>可用窗口减少为5</p>
-<p><img src="TCP%201/Untitled%202.png" alt="TCP%201/Untitled%202.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%202.png" alt="TCP%201/Untitled%202.png"></p>
 <h3 id="所有发送的字节都没收到确认——可用窗口-0"><a href="#所有发送的字节都没收到确认——可用窗口-0" class="headerlink" title="所有发送的字节都没收到确认——可用窗口=0"></a>所有发送的字节都没收到确认——可用窗口=0</h3><p>滑动窗口不能往前推进</p>
-<p><img src="TCP%201/Untitled%203.png" alt="TCP%201/Untitled%203.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%203.png" alt="TCP%201/Untitled%203.png"></p>
 <p>超时之后仍然没有收到23、24的消息，需要从23开始<strong>重新传输，25、27又需要重新传输</strong></p>
-<p><img src="TCP%201/Untitled%204.png" alt="TCP%201/Untitled%204.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%204.png" alt="TCP%201/Untitled%204.png"></p>
 <h1 id="选择重传"><a href="#选择重传" class="headerlink" title="选择重传"></a>选择重传</h1><h3 id="1-选择重传需要指定需要重传的字节"><a href="#1-选择重传需要指定需要重传的字节" class="headerlink" title="1. 选择重传需要指定需要重传的字节"></a>1. 选择重传需要指定需要重传的字节</h3><h3 id="2-每一个字节都有唯一的32位序号"><a href="#2-每一个字节都有唯一的32位序号" class="headerlink" title="2. 每一个字节都有唯一的32位序号"></a>2. 每一个字节都有唯一的32位序号</h3><p>TCP协议中并没有专门存储指定重传字节的内容的位置，存储序号也比较耗费空间</p>
 <ul>
 <li>TCP选项最多40个字节只能包含10个序号</li>
@@ -485,9 +485,9 @@
 <li>一般出错就是整个TCP报文都丢失了——一段字节</li>
 <li>选择重传需要的是重传的序号的<strong>边界</strong></li>
 </ul>
-<p><img src="TCP%201/Untitled%205.png" alt="TCP%201/Untitled%205.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%205.png" alt="TCP%201/Untitled%205.png"></p>
 <ul>
-<li><p><img src="TCP%201/Untitled%206.png" alt="TCP%201/Untitled%206.png"></p>
+<li><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%201/Untitled%206.png" alt="TCP%201/Untitled%206.png"></p>
 </li>
 </ul>
 

@@ -466,36 +466,36 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>每个节点最多能分成两个叉——字典树就是多叉树</p>
-<p><img src="Untitled%2011/Untitled.png" alt="Untitled%2011/Untitled.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled.png" alt="Untitled%2011/Untitled.png"></p>
 <p>二叉树具有唯一根节点</p>
 <p>二叉树每个节点最多有两个孩子：左孩子 右孩子</p>
-<p><img src="Untitled%2011/Untitled%201.png" alt="Untitled%2011/Untitled%201.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%201.png" alt="Untitled%2011/Untitled%201.png"></p>
 <p>叶子节点：两个节点都为空</p>
 <hr>
-<h2 id="特殊的二叉树"><a href="#特殊的二叉树" class="headerlink" title="特殊的二叉树"></a>特殊的二叉树</h2><p><img src="Untitled%2011/Untitled%202.png" alt="Untitled%2011/Untitled%202.png"></p>
+<h2 id="特殊的二叉树"><a href="#特殊的二叉树" class="headerlink" title="特殊的二叉树"></a>特殊的二叉树</h2><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%202.png" alt="Untitled%2011/Untitled%202.png"></p>
 <hr>
-<h2 id="二叉树的递归性"><a href="#二叉树的递归性" class="headerlink" title="二叉树的递归性"></a>二叉树的递归性</h2><p><img src="Untitled%2011/Untitled%203.png" alt="Untitled%2011/Untitled%203.png"></p>
+<h2 id="二叉树的递归性"><a href="#二叉树的递归性" class="headerlink" title="二叉树的递归性"></a>二叉树的递归性</h2><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%203.png" alt="Untitled%2011/Untitled%203.png"></p>
 <h1 id="二分搜索树"><a href="#二分搜索树" class="headerlink" title="二分搜索树"></a>二分搜索树</h1><ul>
 <li>存储的元素必须有可比较性</li>
 <li>BST不包含重复元素（可以自定义</li>
 </ul>
-<p><img src="Untitled%2011/Untitled%204.png" alt="Untitled%2011/Untitled%204.png"></p>
-<p><img src="Untitled%2011/Untitled%205.png" alt="Untitled%2011/Untitled%205.png"></p>
-<p><img src="Untitled%2011/Untitled%206.png" alt="Untitled%2011/Untitled%206.png"></p>
-<p><img src="Untitled%2011/Untitled%207.png" alt="Untitled%2011/Untitled%207.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%204.png" alt="Untitled%2011/Untitled%204.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%205.png" alt="Untitled%2011/Untitled%205.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%206.png" alt="Untitled%2011/Untitled%206.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%207.png" alt="Untitled%2011/Untitled%207.png"></p>
 <p>访问节点在访问左右子树前侧——前序遍历</p>
 <h3 id="宏观-语义"><a href="#宏观-语义" class="headerlink" title="宏观 语义"></a>宏观 语义</h3><h3 id="微观-实例"><a href="#微观-实例" class="headerlink" title="微观 实例"></a>微观 实例</h3><h1 id="前序遍历是最自然最常用的遍历方式"><a href="#前序遍历是最自然最常用的遍历方式" class="headerlink" title="前序遍历是最自然最常用的遍历方式"></a>前序遍历是最自然最常用的遍历方式</h1><p>访问左子树→节点→右子树，中序遍历</p>
-<h2 id="中序遍历，输出就是排序后的结果"><a href="#中序遍历，输出就是排序后的结果" class="headerlink" title="中序遍历，输出就是排序后的结果"></a>中序遍历，输出就是排序后的结果</h2><p><img src="Untitled%2011/Untitled%208.png" alt="Untitled%2011/Untitled%208.png"></p>
+<h2 id="中序遍历，输出就是排序后的结果"><a href="#中序遍历，输出就是排序后的结果" class="headerlink" title="中序遍历，输出就是排序后的结果"></a>中序遍历，输出就是排序后的结果</h2><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%208.png" alt="Untitled%2011/Untitled%208.png"></p>
 <p>将上面的树遍历，转化为使用欧拉回路进行对二叉树的散步，其中每条边都是一道墙，你不能横穿。在此步骤中，先后从左侧，底部，右侧开始散步，分别可得到前序遍历，中序遍历，后序遍历的结果。图示如下：</p>
 <p>前序： 8, 5, 9, 7, 1, 12, 2, 4, 11, 3</p>
 <p>中序： 9, 5, 1, 7, 2, 12, 8, 4, 3, 11</p>
 <p>后序： 9, 1, 2, 12, 7, 5, 3, 11, 4, 8</p>
 <p>前序遍历：</p>
-<p><img src="Untitled%2011/Untitled%209.png" alt="Untitled%2011/Untitled%209.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%209.png" alt="Untitled%2011/Untitled%209.png"></p>
 <p>中序遍历：</p>
-<p><img src="Untitled%2011/Untitled%2010.png" alt="Untitled%2011/Untitled%2010.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%2010.png" alt="Untitled%2011/Untitled%2010.png"></p>
 <p>后序遍历</p>
-<p><img src="Untitled%2011/Untitled%2011.png" alt="Untitled%2011/Untitled%2011.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2011/Untitled%2011.png" alt="Untitled%2011/Untitled%2011.png"></p>
 
             </div>
             <hr/>

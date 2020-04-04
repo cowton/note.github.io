@@ -469,12 +469,12 @@
 <li>流量控制是指让<code>**发送方发送速率不要太快**</code></li>
 </ul>
 <h2 id="流量控制是使用滑动窗口来实现的"><a href="#流量控制是使用滑动窗口来实现的" class="headerlink" title="流量控制是使用滑动窗口来实现的"></a>流量控制是使用<strong>滑动窗口</strong>来实现的</h2><h1 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h1><p>发送方可以发送从501-1500之间的字节</p>
-<p><img src="TCP%202/Untitled.png" alt="TCP%202/Untitled.png"></p>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h3 id="通过窗口大小控制对方的发送速率"><a href="#通过窗口大小控制对方的发送速率" class="headerlink" title="通过窗口大小控制对方的发送速率"></a>通过窗口大小控制对方的发送速率</h3><p><img src="TCP%202/Untitled%201.png" alt="TCP%202/Untitled%201.png"></p>
-<h3 id="接收方调整窗口大小-告知发送方"><a href="#接收方调整窗口大小-告知发送方" class="headerlink" title="接收方调整窗口大小 告知发送方"></a>接收方调整窗口大小 告知发送方</h3><p><img src="TCP%202/Untitled%202.png" alt="TCP%202/Untitled%202.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%202/Untitled.png" alt="TCP%202/Untitled.png"></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h3 id="通过窗口大小控制对方的发送速率"><a href="#通过窗口大小控制对方的发送速率" class="headerlink" title="通过窗口大小控制对方的发送速率"></a>通过窗口大小控制对方的发送速率</h3><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%202/Untitled%201.png" alt="TCP%202/Untitled%201.png"></p>
+<h3 id="接收方调整窗口大小-告知发送方"><a href="#接收方调整窗口大小-告知发送方" class="headerlink" title="接收方调整窗口大小 告知发送方"></a>接收方调整窗口大小 告知发送方</h3><p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%202/Untitled%202.png" alt="TCP%202/Untitled%202.png"></p>
 <h3 id="接收方发送调整窗口的消息丢失"><a href="#接收方发送调整窗口的消息丢失" class="headerlink" title="接收方发送调整窗口的消息丢失"></a>接收方发送调整窗口的消息丢失</h3><p>发送方会一直等待，接收方也会一直等待发送方的发送消息——形成死锁</p>
 <p>TCP可靠消息都是对数据字节确认的，窗口大小的特殊消息没有可靠传输</p>
-<p><img src="TCP%202/Untitled%203.png" alt="TCP%202/Untitled%203.png"></p>
+<p><img src="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%202/Untitled%203.png" alt="TCP%202/Untitled%203.png"></p>
 <h1 id="坚持定时器"><a href="#坚持定时器" class="headerlink" title="坚持定时器"></a>坚持定时器</h1><ul>
 <li>当接收到窗口为0的消息，则启动<code>**坚持定时器**</code></li>
 <li>坚持定时器每隔一段时间发送一个<code>**窗口探测报文**</code></li>

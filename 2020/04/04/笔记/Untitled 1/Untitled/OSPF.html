@@ -1,0 +1,25 @@
+<h1 id="内部网关路由协议之OSPF协议"><a href="#内部网关路由协议之OSPF协议" class="headerlink" title="内部网关路由协议之OSPF协议"></a>内部网关路由协议之OSPF协议</h1><h1 id="链路状态协议LS"><a href="#链路状态协议LS" class="headerlink" title="链路状态协议LS"></a>链路状态协议LS</h1><h2 id="RIP特点"><a href="#RIP特点" class="headerlink" title="RIP特点"></a>RIP特点</h2><ul>
+<li>只和相邻路由器交换信息</li>
+<li>消息描述该路由器与相邻路由器的链路状态</li>
+<li>相比之下,RIP协议只交流相邻路由器的跳数hop</li>
+</ul>
+<h2 id="链路状态LS协议"><a href="#链路状态LS协议" class="headerlink" title="链路状态LS协议"></a>链路状态LS协议</h2><p><img src="OSPF/Untitled.png" alt="OSPF/Untitled.png"></p>
+<p><img src="OSPF/Untitled%201.png" alt="OSPF/Untitled%201.png"></p>
+<p><img src="OSPF/Untitled%202.png" alt="OSPF/Untitled%202.png"></p>
+<p><img src="OSPF/Untitled%203.png" alt="OSPF/Untitled%203.png"></p>
+<h1 id="OSPF协议的过程"><a href="#OSPF协议的过程" class="headerlink" title="OSPF协议的过程"></a>OSPF协议的过程</h1><ul>
+<li><code>**Open Shortest Path First**</code> 开放最短路径优先</li>
+<li>核心是Dijkstra算法</li>
+</ul>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ol>
+<li><p><img src="OSPF/Untitled%204.png" alt="OSPF/Untitled%204.png"></p>
+</li>
+</ol>
+<p>2.</p>
+<p><img src="OSPF/Untitled%205.png" alt="OSPF/Untitled%205.png"></p>
+<ol start="3">
+<li><p><img src="OSPF/Untitled%206.png" alt="OSPF/Untitled%206.png"></p>
+</li>
+</ol>
+<h2 id="五种消息类型"><a href="#五种消息类型" class="headerlink" title="五种消息类型"></a>五种消息类型</h2><h3 id="问候消息Hello"><a href="#问候消息Hello" class="headerlink" title="问候消息Hello"></a>问候消息Hello</h3><h3 id="链路状态数据库描述信息"><a href="#链路状态数据库描述信息" class="headerlink" title="链路状态数据库描述信息"></a>链路状态数据库描述信息</h3><h3 id="链路状态请求信息"><a href="#链路状态请求信息" class="headerlink" title="链路状态请求信息"></a>链路状态请求信息</h3><h3 id="链路状态更新信息"><a href="#链路状态更新信息" class="headerlink" title="链路状态更新信息"></a>链路状态更新信息</h3><h3 id="链路状态确认信息"><a href="#链路状态确认信息" class="headerlink" title="链路状态确认信息"></a>链路状态确认信息</h3><h2 id="完整过程"><a href="#完整过程" class="headerlink" title="完整过程"></a>完整过程</h2><p><img src="OSPF/Untitled%207.png" alt="OSPF/Untitled%207.png"></p>
+<h2 id="对比RIP协议-理解记忆"><a href="#对比RIP协议-理解记忆" class="headerlink" title="对比RIP协议(理解记忆)"></a>对比RIP协议(理解记忆)</h2><p><img src="OSPF/Untitled%208.png" alt="OSPF/Untitled%208.png"></p>

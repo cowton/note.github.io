@@ -1,0 +1,81 @@
+<h1 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列 Queue"></a>队列 Queue</h1><p><a href="Queue/Untitled.md">循环队列</a></p>
+<h2 id="先进先出"><a href="#先进先出" class="headerlink" title="先进先出"></a>先进先出</h2><p><img src="Queue/Untitled.png" alt="Queue/Untitled.png"></p>
+<p><img src="Queue/Untitled%201.png" alt="Queue/Untitled%201.png"></p>
+<pre><code>package Queue;
+/**
+ * 队列
+ * FIFO 先进先出
+ */
+
+import ArrayTest.ArrayE;
+
+public class ArrayQueue&lt;E&gt; implements Queue&lt;E&gt; {
+
+    private ArrayE&lt;E&gt; array;
+
+    public ArrayQueue(int capacity) {
+        array = new ArrayE&lt;&gt;(capacity);
+    }
+
+    public ArrayQueue() {
+        this(10);
+    }
+
+    @Override
+    public int getSize() {
+        return array.getSize();
+    }
+
+    public int getCapacity() {
+        return array.getCapacity();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public void enqueue(E e) {
+        array.addLast(e);
+
+    }
+
+    @Override
+    public E dequeue() {
+        return array.removeFirst();
+    }
+
+    @Override
+    public E getFront() {
+        return array.getFirst();
+    }
+
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(&quot;Queue : Front [&quot;);
+        for (int i = 0; i &lt; array.getSize(); i++) {
+            sb.append(array.get(i));
+            if (i != array.getSize() - 1)
+                sb.append(&quot;,&quot;);
+
+        }
+        sb.append(&quot;] Tail&quot;);
+
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        ArrayQueue&lt;Integer&gt; array = new ArrayQueue&lt;Integer&gt;(20);
+        for (int i = 0; i &lt; 10; i++) {
+            array.enqueue(i);
+
+            if (i % 3 == 2) {
+                array.dequeue();
+            }
+            System.out.println(array);
+        }
+
+    }
+}</code></pre><h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p><img src="Queue/Untitled%202.png" alt="Queue/Untitled%202.png"></p>

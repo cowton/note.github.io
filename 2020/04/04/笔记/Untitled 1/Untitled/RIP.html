@@ -1,0 +1,44 @@
+<h1 id="内部网关路由协议的RIP协议"><a href="#内部网关路由协议的RIP协议" class="headerlink" title="内部网关路由协议的RIP协议"></a>内部网关路由协议的RIP协议</h1><h1 id="距离矢量DV算法"><a href="#距离矢量DV算法" class="headerlink" title="距离矢量DV算法"></a>距离矢量DV算法</h1><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><img src="RIP/Untitled.png" alt="RIP/Untitled.png"></p>
+<p><img src="RIP/Untitled%201.png" alt="RIP/Untitled%201.png"></p>
+<p><img src="RIP/Untitled%202.png" alt="RIP/Untitled%202.png"></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="RIP/Untitled%203.png" alt="RIP/Untitled%203.png"></p>
+<p>距离矢量信息可能是过时的,导致两个方向的距离不同</p>
+<p><img src="RIP/Untitled%204.png" alt="RIP/Untitled%204.png"></p>
+<p><img src="RIP/Untitled%205.png" alt="RIP/Untitled%205.png"></p>
+<p>计算完成之后跟自己的距离矢量进行比较</p>
+<p><img src="RIP/Untitled%206.png" alt="RIP/Untitled%206.png"></p>
+<p>设置下一跳</p>
+<p><img src="RIP/Untitled%207.png" alt="RIP/Untitled%207.png"></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li><p><img src="RIP/Untitled%208.png" alt="RIP/Untitled%208.png"></p>
+</li>
+</ol>
+<p>2.</p>
+<p><img src="RIP/Untitled%209.png" alt="RIP/Untitled%209.png"></p>
+<h1 id="RIP协议的过程"><a href="#RIP协议的过程" class="headerlink" title="RIP协议的过程"></a>RIP协议的过程</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="RIP/Untitled%2010.png" alt="RIP/Untitled%2010.png"></p>
+<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>每隔<code>30</code>s交换一次路由信息</li>
+<li>跳数&gt;<code>15</code> 就是不可达路由</li>
+</ul>
+<p><img src="RIP/Untitled%2011.png" alt="RIP/Untitled%2011.png"></p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p><img src="RIP/Untitled%2012.png" alt="RIP/Untitled%2012.png"></p>
+<h3 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h3><ul>
+<li>第一步 路由器的初始化路由表</li>
+</ul>
+<p><img src="RIP/Untitled%2013.png" alt="RIP/Untitled%2013.png"></p>
+<ul>
+<li>第二步</li>
+</ul>
+<p><img src="RIP/Untitled%2014.png" alt="RIP/Untitled%2014.png"></p>
+<ul>
+<li>第三步</li>
+<li>目的地|距离|下一跳</li>
+</ul>
+<p><img src="RIP/Untitled%2015.png" alt="RIP/Untitled%2015.png"></p>
+<h1 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h1><h2 id="故障信息传递慢"><a href="#故障信息传递慢" class="headerlink" title="故障信息传递慢"></a>故障信息传递慢</h2><p>路由器随便相信相邻节点的信息</p>
+<p><img src="RIP/Untitled%2016.png" alt="RIP/Untitled%2016.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>实现简单,开销小</li>
+<li>限制了网络的规模</li>
+<li>故障信息诊断慢</li>
+</ul>
