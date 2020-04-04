@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://onenote.netlify.com/"/>
+  <link href="https://blog.xieqiang.me/"/>
   <updated>2020-04-04T12:47:52.651Z</updated>
-  <id>https://onenote.netlify.com/</id>
+  <id>https://blog.xieqiang.me/</id>
   
   <author>
     <name>Xieqiang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>好用的正则表达式</title>
-    <link href="https://onenote.netlify.com/2020/04/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://onenote.netlify.com/2020/04/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
     <published>2020-04-04T12:40:09.547Z</published>
     <updated>2020-04-04T12:47:52.651Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>test tag</title>
-    <link href="https://onenote.netlify.com/2020/04/04/test-tag/"/>
-    <id>https://onenote.netlify.com/2020/04/04/test-tag/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/test-tag/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/test-tag/</id>
     <published>2020-04-04T12:20:35.000Z</published>
     <updated>2020-04-04T12:34:01.634Z</updated>
     
@@ -50,17 +50,17 @@
     </summary>
     
     
-      <category term="测试分类" scheme="https://onenote.netlify.com/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/"/>
+      <category term="测试分类" scheme="https://blog.xieqiang.me/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="测试" scheme="https://onenote.netlify.com/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="https://blog.xieqiang.me/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>AVL</title>
-    <link href="https://onenote.netlify.com/2020/04/04/AVL/"/>
-    <id>https://onenote.netlify.com/2020/04/04/AVL/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/AVL/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/AVL/</id>
     <published>2020-04-04T05:20:56.003Z</published>
     <updated>2020-04-03T21:17:36.000Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>First message</title>
-    <link href="https://onenote.netlify.com/2020/04/04/First-message/"/>
-    <id>https://onenote.netlify.com/2020/04/04/First-message/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/First-message/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/First-message/</id>
     <published>2020-04-04T03:11:29.000Z</published>
     <updated>2020-04-04T03:12:49.515Z</updated>
     
@@ -105,8 +105,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://onenote.netlify.com/2020/04/04/hello-world/"/>
-    <id>https://onenote.netlify.com/2020/04/04/hello-world/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/hello-world/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/hello-world/</id>
     <published>2020-04-04T02:50:18.861Z</published>
     <updated>2020-04-04T02:50:18.861Z</updated>
     
@@ -127,8 +127,8 @@
   
   <entry>
     <title>标签</title>
-    <link href="https://onenote.netlify.com/2020/04/04/tags/"/>
-    <id>https://onenote.netlify.com/2020/04/04/tags/</id>
+    <link href="https://blog.xieqiang.me/2020/04/04/tags/"/>
+    <id>https://blog.xieqiang.me/2020/04/04/tags/</id>
     <published>2020-04-03T16:00:00.000Z</published>
     <updated>2020-04-04T12:01:08.365Z</updated>
     
