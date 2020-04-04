@@ -62,9 +62,9 @@
     <link href="https://blog.xieqiang.me/2020/04/04/Node%20SSH/"/>
     <id>https://blog.xieqiang.me/2020/04/04/Node%20SSH/</id>
     <published>2020-04-04T12:20:35.000Z</published>
-    <updated>2020-04-04T12:55:29.650Z</updated>
+    <updated>2020-04-04T13:12:36.271Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_19734597/article/details/94556956" target="_blank" rel="noopener">Node服务在断开SSH后停止运行解决方案（创建守护进程）_地表最强菜鸡的个人博客-CSDN博客</a></p><p>我今天来单位发现ElasticSearch-Head挂了，基本上每天早上来上班都是挂掉的，我tm就怀疑这不是一个偶然现象，排查了一番发现是node进程在断开SSH之后就会停止运行了，网上的方法都试过了，有用nohup的，有用forever的，有直接写npm start &amp;的，然而都并没有什么卵用，怀疑都是没经过大脑直接抄袭别人的文章。</p><p>有效的解决方案是在Linux中安装pm2来管理node进程，那到底pm2是干嘛的？网上找了一下介绍：pm2 是一个带有负载均衡功能的Node应用的进程管理器。可以把你的独立代码利用全部的服务器上的所有CPU，并保证进程永远都活着，0秒的重载。大致意思就是和linux守护进程一样能一直运行node程序，下面我们来安装一下</p><pre><code>npm install -g pm2ln -s /data/node-v12.4.0-linux-x64/bin/pm2 /usr/bin/pm2</code></pre><p>可以通过pm2 -v 验证，用法就是下面这几种</p><pre><code>pm2 start npm -- run startpm2 listpm2 stoppm2 restartpm2 delete</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_19734597/article/details/94556956" target="_blank" rel="noopener">Node服务在断开SSH后停止运行解决方案（创建守护进程）_地表最强菜鸡的个人博客-CSDN博客</a></p><p>问题：node进程在断开SSH之后就会停止运行。</p><p>有效的解决方案是在Linux中安装pm2来管理node进程，那到底pm2是干嘛的？网上找了一下介绍：pm2 是一个带有负载均衡功能的Node应用的进程管理器。可以把你的独立代码利用全部的服务器上的所有CPU，并保证进程永远都活着，0秒的重载。大致意思就是和linux守护进程一样能一直运行node程序，下面我们来安装一下</p><pre><code>npm install -g pm2ln -s /data/node-v12.4.0-linux-x64/bin/pm2 /usr/bin/pm2</code></pre><p>可以通过pm2 -v 验证，用法就是下面这几种</p><pre><code>pm2 start npm -- run startpm2 listpm2 stoppm2 restartpm2 delete</code></pre>]]></content>
     
     <summary type="html">
     
