@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xieqiang.me/link/index.html</loc>
+    
+    <lastmod>2020-04-04T13:08:56.035Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.xieqiang.me/2020/04/04/Node%20SSH/</loc>
     
     <lastmod>2020-04-04T12:55:29.650Z</lastmod>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xieqiang.me/tags/tags.html</loc>
+    <loc>https://blog.xieqiang.me/tags/index.html</loc>
     
     <lastmod>2020-04-04T12:01:08.365Z</lastmod>
     
