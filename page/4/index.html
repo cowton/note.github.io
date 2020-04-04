@@ -1,6 +1,213 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Xieqiang</title><meta name="description" content=""><meta name="author" content="Xieqiang"><meta name="copyright" content="Xieqiang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Xieqiang"><meta name="twitter:description" content=""><meta name="twitter:image" content="https://onenote.netlify.com/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="Xieqiang"><meta property="og:url" content="https://onenote.netlify.com/page/4/"><meta property="og:site_name" content="Xieqiang"><meta property="og:description" content=""><meta property="og:image" content="https://onenote.netlify.com/img/avatar.png"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-block content
-  #recent-posts.recent-posts
-    include includes/recent-posts.pug  
-    include includes/pagination.pug
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://onenote.netlify.com/page/4/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Xieqiang" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">90</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><div class="full_page" id="nav" style="background-image: url(/img/index.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Xieqiang</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">Xieqiang</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/jerryc127" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxx@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%202/" title="笔记/Untitled 1/Untitled/Untitled 2">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/Untitled 2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%202/" title="笔记/Untitled 1/Untitled/Untitled 2">笔记/Untitled 1/Untitled/Untitled 2</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">封装成帧基本作用”帧“是数据链路层的基本单位
+
+结构帧首部+帧的数据+帧尾部
+
+帧首部尾部
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%201/" title="笔记/Untitled 1/Untitled/Untitled 1">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/Untitled 1"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%201/" title="笔记/Untitled 1/Untitled/Untitled 1">笔记/Untitled 1/Untitled/Untitled 1</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">网络的性能指标速率
+时延
+发送时延用户决定+网速
+
+传播时延路径+传输介质
+
+排队时延
+数据包在网络设备中等待被处理的时间
+
+处理时延处理花费时间
+
+总时延总时延=发送、排队、传播、处理
+往返时间RTT
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled/" title="笔记/Untitled 1/Untitled/Untitled">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/Untitled"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled/" title="笔记/Untitled 1/Untitled/Untitled">笔记/Untitled 1/Untitled/Untitled</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">计算机网络的层次结构层次设计的基本原则目的: 
+
+保证数据通路顺畅
+识别目的计算机
+目的计算机状态
+数据是否错误
+
+
+原则：
+
+
+各层之间是互相独立的
+每一层要有足够的灵活性
+各层之间可以完全解耦
+
+OSI七层模型
+TCP / IP 四层四层
+
+示例：
+
+协议：
+
+现代互联网的网络拓扑
+边缘部分
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/DHCP/" title="笔记/Untitled 1/Untitled/DHCP">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/DHCP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/DHCP/" title="笔记/Untitled 1/Untitled/DHCP">笔记/Untitled 1/Untitled/DHCP</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">DHCP协议
+Dynamic Host Configuration Protocal
+动态主机设置协议
+DHCP是一个局域网协议
+DHCP是应用UDP协议的应用层协议
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/DNS/" title="笔记/Untitled 1/Untitled/DNS">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/DNS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/DNS/" title="笔记/Untitled 1/Untitled/DNS">笔记/Untitled 1/Untitled/DNS</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">DNS详解概念
+Domain Name System 域名系统
+使用域名帮助记忆
+
+
+域名
+域名由店\字母\数字组成
+点分割不同的域
+域名可以分为顶级域\二级域\三级域
+
+顶级域
+二级域域名的组织
+域名服务器
+本地域名服务器不知道dns,就会先查询根域名服务器,然后查询地区服务器
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%2014/" title="笔记/Untitled 1/Untitled/Untitled 14">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 1/Untitled/Untitled 14"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%2014/" title="笔记/Untitled 1/Untitled/Untitled 14">笔记/Untitled 1/Untitled/Untitled 14</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">应用层概述应用层的位置
+面向用户
+UDP对用户
+TCP对用户
+作用
+应用进程的报文类型(请求报文\应答报文)
+报文的语法\格式
+应用进程发送数据的时机\规则
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled/" title="笔记/Untitled 18/Untitled">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 18/Untitled"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled/" title="笔记/Untitled 18/Untitled">笔记/Untitled 18/Untitled</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">简介
+哈希函数：键转换成索引
+
+哈希冲突
+哈希表的思想：空间换时间
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%204/" title="笔记/Untitled 18/Untitled 4">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 18/Untitled 4"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%204/" title="笔记/Untitled 18/Untitled 4">笔记/Untitled 18/Untitled 4</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">其他哈希冲突解决方法链地址法属于封闭地址法
+开放地址法与链地址法刚好相反，每个地址都对所有元素开放
+
+线性探测
+
+
+平方探测
+
+二次哈希
+开放地址法的负载率：已占用的占哈希表的比率对于开放地址法来说：只要被扩容的负载率选值合适，依然可以达到O(1)
+更多哈希冲突的处理方法
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%202/" title="笔记/Untitled 18/Untitled 2">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 18/Untitled 2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%202/" title="笔记/Untitled 18/Untitled 2">笔记/Untitled 18/Untitled 2</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">实现哈希表哈希冲突的处理——链地址法
+Seperate Chaining
+
+而底层是个映射就可以，不需要一定是链表
+Java 8 之后，当Hash冲突达到一定之后就转换成了TreeMap
+
+
+链地址的时间复杂度平均来看
+
+哈希碰撞攻击
+哈希表的动态空间处理——容量的resize
+
+
+缩容同理
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%203/" title="笔记/Untitled 18/Untitled 3">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔记/Untitled 18/Untitled 3"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%2018/Untitled%203/" title="笔记/Untitled 18/Untitled 3">笔记/Untitled 18/Untitled 3</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-04-04 13:20:56"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-04</time></div><div class="content">更复杂的动态空间处理方法根据素数表扩容
+
+哈希表：均摊复杂度为O(1)
+牺牲了: 顺序性
+
+Bug
+HashTable 不要求 Comparable
+TreeMap 要去 Comparable ,因此实际上还是只能使用Comparable
+而对应链表来说就不需要Comparable
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-fw fa-chevron-left" aria-hidden="true"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Xieqiang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">Articles</div><div class="length_num">90</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="Add to bookmark" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>Add to bookmark</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jerryc127" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxx@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>Announcement</span></div><div class="announcement_content">感謝訪問本站，若喜歡請收藏 ^_^</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>Recent Post</span></div><div class="aside-recent-item"> <div class="aside-recent-post"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%204/Queue/Untitled/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="笔记/Untitled 4/Queue/Untitled" alt="笔记/Untitled 4/Queue/Untitled"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%204/Queue/Untitled/" title="笔记/Untitled 4/Queue/Untitled">笔记/Untitled 4/Queue/Untitled</div><time class="aside-post_meta post-meta__date" title="Created 2020-04-04 13:20:56">2020-04-04</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%2013/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="笔记/Untitled 1/Untitled/Untitled 13" alt="笔记/Untitled 1/Untitled/Untitled 13"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/Untitled%2013/" title="笔记/Untitled 1/Untitled/Untitled 13">笔记/Untitled 1/Untitled/Untitled 13</div><time class="aside-post_meta post-meta__date" title="Created 2020-04-04 13:20:56">2020-04-04</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%205/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="笔记/Untitled 1/Untitled/TCP 5" alt="笔记/Untitled 1/Untitled/TCP 5"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%205/" title="笔记/Untitled 1/Untitled/TCP 5">笔记/Untitled 1/Untitled/TCP 5</div><time class="aside-post_meta post-meta__date" title="Created 2020-04-04 13:20:56">2020-04-04</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%204/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="笔记/Untitled 1/Untitled/TCP 4" alt="笔记/Untitled 1/Untitled/TCP 4"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%204/" title="笔记/Untitled 1/Untitled/TCP 4">笔记/Untitled 1/Untitled/TCP 4</div><time class="aside-post_meta post-meta__date" title="Created 2020-04-04 13:20:56">2020-04-04</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%203/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="笔记/Untitled 1/Untitled/TCP 3" alt="笔记/Untitled 1/Untitled/TCP 3"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/04/%E7%AC%94%E8%AE%B0/Untitled%201/Untitled/TCP%203/" title="笔记/Untitled 1/Untitled/TCP 3">笔记/Untitled 1/Untitled/TCP 3</div><time class="aside-post_meta post-meta__date" title="Created 2020-04-04 13:20:56">2020-04-04</time></div></a></div></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>Archives</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/"><span class="archive-list-date">2020年04月</span><span class="archive-list-count">90</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">Article :</div><div class="webinfo-article-count">90</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">Run time :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="6/7/2018 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">UV :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">PV :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Xieqiang</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect){ 
+  var typed = new Typed("#subtitle", {
+    strings: '今日事&#44;今日畢,Never put off till tomorrow what you can do today'.split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: false,
+    backSpeed: 50
+  })
+}else{
+  document.getElementById("subtitle").innerHTML = '今日事&#44;今日畢'
+  }</script></body></html>
