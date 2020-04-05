@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Xieqiang</title>
+  <title>Untitled Notes</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.xieqiang.me/"/>
-  <updated>2020-04-04T12:47:52.651Z</updated>
+  <updated>2020-04-05T14:30:23.928Z</updated>
   <id>https://blog.xieqiang.me/</id>
   
   <author>
-    <name>Xieqiang</name>
+    <name>cowton</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo利用VSCode插件Paste Image完成粘贴插入剪切板图片</title>
+    <link href="https://blog.xieqiang.me/2020/04/05/vscode-image-paste/"/>
+    <id>https://blog.xieqiang.me/2020/04/05/vscode-image-paste/</id>
+    <published>2020-04-05T13:33:29.000Z</published>
+    <updated>2020-04-05T14:30:23.928Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="粘贴图片插件：Paste-Image"><a href="#粘贴图片插件：Paste-Image" class="headerlink" title="粘贴图片插件：Paste Image"></a>粘贴图片插件：<a href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image" target="_blank" rel="noopener">Paste Image</a></h1><p>hexo3.0版本中可以在_config.yml中设置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure><p>这样在hexo new 的时候会生成同名的文档夹，同时在md文档中输入(这一步不要做)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![title]&#123;% asset_img xxx %&#125;</span><br></pre></td></tr></table></figure><p>就可以插入这个文档夹中的图片。为了方便进行这个步骤，使用vscode中的插件Paste Image，安装之后，在VSCode中的settings里新增两条配置：</p><blockquote><p>具体方法为，组合键<strong>Ctrl</strong>+<strong>,</strong>,然后在设置界面的搜索框中输入<strong>json</strong>，然后点击编辑即可。[1]</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;pasteImage.path&quot;: &quot;$&#123;currentFileNameWithoutExt&#125;&#x2F;&quot;,</span><br><span class="line">&quot;pasteImage.insertPattern&quot;: &quot;![$&#123;imageFileNameWithoutExt&#125;]($&#123;imageFilePath&#125;)&quot;</span><br></pre></td></tr></table></figure><p><img src="/" class="lazyload" data-src="/2020/04/05/vscode-image-paste/2020-04-05-21-56-02.png"  alt="2020-04-05-21-56-02"></p><p><img src="/" class="lazyload" data-src="/2020/04/05/vscode-image-paste/2020-04-05-22-03-31.png"  alt="套娃一下"></p><p>另外一款插件<a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" target="_blank" rel="noopener">Markdown All in One</a>、<a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced" target="_blank" rel="noopener">Markdown Preview Enhanced</a>也强烈推荐。</p><p>[1] 此处顺便备份一下setting的设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;java.errors.incompleteClasspath.severity&quot;: &quot;ignore&quot;,</span><br><span class="line">    &quot;editor.wordWrap&quot;: &quot;on&quot;,</span><br><span class="line">    &quot;python.jediEnabled&quot;: false,</span><br><span class="line">    &quot;editor.cursorSmoothCaretAnimation&quot;: true,</span><br><span class="line">    &quot;editor.smoothScrolling&quot;: true,</span><br><span class="line">    &quot;workbench.iconTheme&quot;: &quot;material-icon-theme&quot;,</span><br><span class="line">    &quot;files.associations&quot;: &#123;</span><br><span class="line">        &quot;*.vue&quot;: &quot;bat&quot;,</span><br><span class="line">        &quot;*.conf&quot;: &quot;splunk&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;editor.largeFileOptimizations&quot;: false,</span><br><span class="line">    &quot;go.useLanguageServer&quot;: true</span><br><span class="line">    &quot;pasteImage.path&quot;: &quot;$&#123;currentFileNameWithoutExt&#125;&#x2F;&quot;,</span><br><span class="line">    &quot;pasteImage.insertPattern&quot;: &quot;![$&#123;imageFileNameWithoutExt&#125;]($&#123;imageFilePath&#125;)&quot;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;粘贴图片插件：Paste-Image&quot;&gt;&lt;a href=&quot;#粘贴图片插件：Paste-Image&quot; class=&quot;headerlink&quot; title=&quot;粘贴图片插件：Paste Image&quot;&gt;&lt;/a&gt;粘贴图片插件：&lt;a href=&quot;https://marketpl
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="https://blog.xieqiang.me/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Windows下使用github需要每次都要ssh-add的问题</title>
+    <link href="https://blog.xieqiang.me/2020/04/05/fixsshissue/"/>
+    <id>https://blog.xieqiang.me/2020/04/05/fixsshissue/</id>
+    <published>2020-04-05T13:02:45.000Z</published>
+    <updated>2020-04-05T13:14:55.901Z</updated>
+    
+    <content type="html"><![CDATA[<p>放到git的bashrc中：打开git的安装目录，进入到etc/中，使用文本编辑软件（比如Editplus）编辑 bash.bashrc 文件，在末尾添加两行：</p><blockquote><p>注意，<strong>id_rsa</strong>需要替换成你自己的ssh key 文件名</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span><br></pre></td></tr></table></figure><p>这样，在每次新打开git的shell之后，会自动执行这两句话，并在shell中回显：</p><p><img src="/" class="lazyload" data-src="/2020/04/05/fixsshissue/ssh.png"  alt="SSH git" title="SSH 刚开启git的时候的界面"></p><p>这样就解决了上述问题。：）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;放到git的bashrc中：打开git的安装目录，进入到etc/中，使用文本编辑软件（比如Editplus）编辑 bash.bashrc 文件，在末尾添加两行：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意，&lt;strong&gt;id_rsa&lt;/strong&gt;需要替换成你自己的s
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>好用的正则表达式</title>
@@ -35,25 +83,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>test tag</title>
-    <link href="https://blog.xieqiang.me/2020/04/04/test-tag/"/>
-    <id>https://blog.xieqiang.me/2020/04/04/test-tag/</id>
-    <published>2020-04-04T12:20:35.000Z</published>
-    <updated>2020-04-04T12:34:01.634Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="测试分类" scheme="https://blog.xieqiang.me/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/"/>
-    
-    
-      <category term="测试" scheme="https://blog.xieqiang.me/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
@@ -144,21 +173,6 @@
       
         &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>标签</title>
-    <link href="https://blog.xieqiang.me/2020/04/04/tags/"/>
-    <id>https://blog.xieqiang.me/2020/04/04/tags/</id>
-    <published>2020-04-03T16:00:00.000Z</published>
-    <updated>2020-04-04T12:01:08.365Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
